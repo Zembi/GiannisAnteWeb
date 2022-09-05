@@ -488,9 +488,9 @@
 	
 				<div id="FirstVideoContainer">
 					
-					<iframe width="717" height="100%" src="https://www.youtube.com/embed/HrCU305tzmM" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="717" height="100%" id="Player1" src="https://www.youtube.com/embed/HrCU305tzmM?enablejsapi=1&origin=https://jannis34.eu/" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					
-					<!--<video id="Video2" width="717" controls>
+					<!--<video id="Video1" width="717" controls>
 
   						<source src="SiteVideos/Giannis/Finding Giannis.mp4" type="video/mp4">
  						Your browser does not support HTML5 video.
@@ -670,7 +670,7 @@
 				this.style.background = "rgb(9, 32, 2)";
 				this.style.marginTop = "-320px";
 			};
-			video2.pause()
+			video2.pause();
 			counter1 = 1;
 		}
 		else {
@@ -730,6 +730,25 @@
 		}
 	}
 
+	</script>
+
+	<script type="text/javascript">
+		//LOAD API
+		var player1 = document.getElementById("Player1");
+		function onYouTubeIframeAPIReady() {
+			player1 = new YT.Player('player1', {
+				height: '717px',
+				width: '100%',
+				videoId: 'HrCU305tzmM',
+				playerVars: {
+					'playsinline': 1
+				},
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+		}
 	</script>
 
 </body>
