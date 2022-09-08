@@ -1,0 +1,675 @@
+	* {
+  		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		height: 100%;
+		background: white;
+		margin: 0;
+		padding: 0;
+	}
+
+	#BodyContainer {
+		width: 100%;
+		background: black;
+	}
+
+	#MainImage {
+		position: absolute;
+		left: 50%;
+		width: 1000px; height: 750px;
+		box-shadow: 0px 1px 4px green;
+		transform: translateX(-50%);
+		content: url('../SitePics/Giannis/Giannis1.jpg');
+	}
+	
+	/*Menu Elements*/
+	#HeaderContainer {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		width: 100%; height: 80px;
+		background: rgba(0, 0, 0, 0.9);
+		border-bottom: 2px solid white;
+	}
+
+	#AnteMilwaukeImage {
+		position: absolute;
+		left: 10%;
+		width: 180px; height: 150px;
+		content: url('../SitePics/Giannis/Giannis5.png');
+		margin-top: -10px;
+	}
+	
+		/*Buttons Container*/
+	#ButtonsContainer {
+		position: absolute;
+		top: 50%; right: 10px;
+		height: 28px;
+		margin-top: -10px;
+	}
+
+	.NoButtons {
+		position: relative;
+		display: table;
+		float: left;
+		color: white;
+		background: transparent;
+		cursor: pointer;
+		outline: none;
+		font-size: 22px;
+		border: none;
+		border-right: 2px solid grey;
+		margin-right: 20px;
+		transition: 0.3s border;
+	}
+
+	.NoButtons:last-of-type {
+		margin-right: 0;
+	}
+
+	.NoButtons:hover {
+		color: rgb(77, 60, 6);
+		border-right: 2px solid transparent;
+		border-bottom: 2px solid rgb(9, 32, 2);
+	}
+	
+	/*Under Menu Elements*/
+	#MainPartContainer {
+		position: relative;
+		width: 100%;
+		background: rgb(4, 41, 1, 0.4);
+		overflow: hidden;
+	}
+
+	#TitleContainer {
+		position: absolute;
+		width: 1000px; height: 200px;
+		background: transparent;
+		font-size: 80px;
+		left: 50%;
+		overflow: hidden;
+		transform: translateX(-50%);
+		margin-top: 200px;
+	}
+
+	#TitleInsiderContainer {
+		position: absolute;
+		display: block;
+		width: 100%;
+		background: transparent;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	#TitleWrapInsiderContainer {
+		position: relative;
+		display: table;
+		background: transparent;
+		margin: auto;
+	}
+
+	#GiannisTextContainer {
+		position: relative;
+		display: inline-block;
+		color: white;
+		font-family: Flamenco;
+		background: transparent;
+		transform: translateX(-400px);
+		animation: LeftInsideAnim 1.75s linear 0.3s 1 forwards;
+	}
+
+	#NumberTextContainer {
+		position: relative;
+		display: inline-block;
+		color: white;
+		background: transparent;
+		font-family: Flamenco;
+		top: -15px;
+		margin: 0 30px 0 30px;
+		transform: translateX(-650px);
+		animation: UpInsideAnim 1.25s linear 1s 1 forwards;
+	}
+
+	#AntetokounmpoTextContainer {
+		position: relative;
+		display: inline-block;
+		color: white;
+		background: transparent;
+		font-family: Flamenco;
+		transform: translateX(650px);
+		animation: RightInsideAnim 1.75s linear 0.3s 1 forwards;
+	}
+	
+	/*MAIN PAGE CONTENT CONTAINER*/
+	#ContentOfPageContainer {
+		position: relative;
+		display: block;
+		width: 100%;
+		background: transparent;
+		margin-top: 750px;
+	}
+
+	#ContentOfPageWrapContainer {
+		position: relative;
+		display: inline-block;
+		width: 1000px;
+		background: transparent;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	/*1/3 OF DOWN CONTAINERS*/
+	/*ABOUT GIANNIS CONTAINER*/
+	#DownPartWithInfoAboutGiannis {
+		position: relative;
+		display: block;
+		width: 100%;
+		background: rgb(124, 133, 123);
+		overflow: hidden;
+		opacity: 0.1;
+		border-radius: 10px 10px 2px 2px;
+		padding: 90px 0 90px 0;
+		transition: opacity 2s linear;
+	}
+
+	#InsideAGContainer {
+		position: relative;
+		display: inline-block;
+		width: 80%;
+		background: transparent;
+		left: 50%;
+		margin: auto;
+		transform: translateX(-50%);
+	}
+
+	.TitleContainer {
+		color: rgb(9, 32, 2);
+		text-align: center;
+		font-family: Flamenco;
+		font-size: 30px;
+	}
+
+	#GiannisFirstInfoTextContainer {
+		color: black;
+		font-family: Flamenco;
+		font-size: 20px;
+		margin-top: 10px;
+		transition: color 0.2s;
+	}
+
+	#GiannisFirstInfoTextContainer:hover {
+		color: rgb(55, 45, 7);
+	}
+
+	/*FIRST VIDEO MOVING CONTAINER*/
+	#FirstVideoFullContainer {
+		position: absolute;
+		width: 100%;
+		background: transparent;
+		margin-top: 58px;
+	}
+
+	#FirstVideoFullWrapContainer {
+		position: relative;
+		display: inline-block;
+		background: transparent;
+		left: 50%;
+		transform: translate(-50%, 0);
+		transition: transform 0.3s;
+	}
+
+	#FirstVideoButton {
+		position: relative;
+		z-index: 4;
+		left: 50%;
+		background: rgb(9, 32, 2);
+		color: white;
+		font-size: 20px;
+		top: 0px;
+		border-radius: 10px 10px 0 0;
+		border: 1px solid white;
+		border-bottom: none;
+		outline: none;
+		cursor: pointer;
+		padding: 4px;
+		transform: translate(-50%, 0);
+		transition: transform 0.3s;
+	}
+
+	#FirstVideoButton:hover {
+		transform: translate(-50%, -5px);
+	}
+
+	#FirstVideoButton:active {
+		color: rgb(34, 34, 2);
+		background: rgb(15, 23, 12);
+		transform: translate(-50%, 0);
+	}
+
+	#FirstVideoContainer {
+		position: relative;
+		z-index: 3;
+		width: 620px; height: 380px;
+		background: rgb(9, 32, 2);
+		overflow: hidden;
+		border-radius: 20px 20px 0 0;
+		border: 1px solid white;
+		border-bottom: none;
+		box-shadow: 0px 0px 5px black;
+		margin-top: -5px;
+		padding-top: 5px; padding-bottom: 5px;
+	}
+
+	/*2/3 OF DOWN CONTAINERS*/
+	#LineSeperatorContainer {
+		position: relative;
+		z-index: 5;
+		width: 100%; height: 60px;
+		background: black;
+		box-shadow: 0px 0px 5px black;
+		border-top: 2px solid white; border-bottom: 2px solid white;
+	}
+
+	/*3/3 OF DOWN CONTAINERS*/
+	/*FREAK'S ACHIEVEMENTS CONTAINER*/
+	#DownPartWithFreaksAchiev {
+		position: relative;
+		display: block;
+		width: 100%;
+		background: rgb(124, 133, 123);
+		overflow: hidden;
+		opacity: 0.1;
+		border-radius: 2px 2px 10px 10px;
+		padding: 90px 0 90px 0;
+		transition: opacity 2s linear;
+	}
+
+	#InsideFAContainer {
+		position: relative;
+		display: inline-block
+		width: 80%;
+		background: transparent;
+		left: 50%;
+		margin: auto;
+		z-index: 1;
+		transform: translateX(-50%);
+	}
+
+	#FreaksAccomplishmentsTextContainer {
+		position: relative;
+		display: inline-block;
+		color: black;
+		font-family: Flamenco;
+		font-size: 20px;
+		left: 10%;
+		margin-top: 10px;
+		transform: translateX(0%);
+	}
+
+	#InsideFAContainer:hover ~ #ImageContainer {
+		opacity: 1;
+	}
+
+	#ImageContainer {
+		position: absolute;
+		width: 330px; height: 230px;
+		opacity: 0;
+		top: 55%;
+		right: 5px;
+		transform: translateY(-50%);
+		transition: opacity 0.6s;
+	}
+
+	#MVPImage {
+		width: 100%; height: 100%;
+		content: url('../SitePics/Giannis/Giannis4.jpg');
+	}
+
+	#SecondVideoFullContainer {
+		position: absolute;
+		width: 100%;
+		background: transparent;
+		margin-top: 58px;
+		z-index: 2;
+	}
+
+	#SecondVideoFullWrapContainer {
+		position: relative;
+		display: inline-block;
+		background: transparent;
+		left: 50%;
+		transform: translate(-50%, 0);
+		transition: transform 0.3s;
+	}
+
+	#SecondVideoButton {
+		position: relative;
+		z-index: 4;
+		left: 50%;
+		background: rgb(9, 32, 2);
+		color: white;
+		font-size: 20px;
+		top: 0px;
+		border-radius: 10px 10px 0 0;
+		border: 1px solid white;
+		border-bottom: none;
+		outline: none;
+		cursor: pointer;
+		padding: 4px;
+		transform: translate(-50%, 0);
+		transition: transform 0.3s;
+	}
+
+	#SecondVideoButton:hover {
+		transform: translate(-50%, -5px);
+	}
+
+	#SecondVideoButton:active {
+		color: rgb(34, 34, 2);
+		background: rgb(15, 23, 12);
+		transform: translate(-50%, 0);
+	}
+
+	#SecondVideoContainer {
+		position: relative;
+		z-index: 3;
+		width: 620px; height: 380px;
+		background: rgb(9, 32, 2);
+		overflow: hidden;
+		border-radius: 20px 20px 0 0;
+		border: 1px solid white;
+		border-bottom: none;
+		box-shadow: 0px 0px 5px black;
+		margin-top: -5px;
+		padding-top: 5px; padding-bottom: 5px;
+	}
+
+
+	/*FOOTER STYLE*/
+	#FooterContainer {
+		position: relative;
+		display: block;
+		width: 100%;
+		background: black;
+		margin-top: 70px;
+		padding: 10px 0 5px 0;
+	}
+
+	#LinksTittleContainer {
+		position: relative;
+		display: table;
+		color: white;
+		font-size: 24px;
+		border: 2px solid white; border-left: none; border-right: none;
+		margin: auto;
+	}
+
+	#AllLinksContainer {
+		position: relative;
+		display: inline-block;
+		background: transparent;
+		left: 50%;
+		font-size: 18px;
+		transform: translateX(-50%);
+	}
+
+	#AllLinksContainer1 {
+		position: relative;
+		display: inline-block;
+		background: transparent;
+		color: rgb(9, 32, 2);
+		margin-top: 10px; margin-right: 60px;
+	}
+
+	#AllLinksContainer2 {
+		position: relative;
+		display: inline-block;
+		background: transparent;
+		color: rgb(9, 32, 2);
+	}
+
+	a {
+		text-decoration: none;
+		color: rgb(27, 37, 2);
+	}
+
+	a:hover {
+		color: rgb(55, 45, 7);
+	}
+
+	/*SCREEN WIDTH UNDER 1700px*/
+	@media only screen and (max-width: 1700px) {
+
+		#TitleContainer {
+			font-size: 70px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 1300px*/
+	@media only screen and (max-width: 1300px) {
+
+		.NoButtons {
+			font-size: 20px;
+		}
+
+		#TitleContainer {
+			font-size: 60px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 1000px*/
+	@media only screen and (max-width: 1100px) {
+
+		#MainImage {
+			width: 90%
+		}
+
+		#ContentOfPageWrapContainer {
+			width: 90%;
+
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 1000px*/
+	@media only screen and (max-width: 1000px) {
+
+		#MainImage {
+			width: 100%;
+			top: 70px;
+		}
+
+		#AnteMilwaukeImage {
+			left: 0%;
+		}
+
+		.NoButtons {
+			font-size: 18px;
+		}
+
+		#TitleContainer {
+			width: 100%;
+			font-size: 50px;
+			margin: 220px 0 0 0;
+		}
+
+		#ContentOfPageContainer {
+			margin-top: 830px;
+		}
+
+		.TitleContainer {
+			font-size: 26px;
+		}
+
+		#DownPartWithInfoAboutGiannis {
+			padding: 50px 0 50px 0;
+		}
+
+		#GiannisFirstInfoTextContainer {
+			font-size: 18px;
+		}
+
+		#FirstVideoFullContainer {
+			margin-top: 18px;
+		}
+
+		#FirstVideoContainer {
+			width: 560px; height: 320px;
+		}
+
+		#DownPartWithFreaksAchiev {
+			padding: 50px 0 50px 0;
+		}
+
+		#FreaksAccomplishmentsTextContainer {
+			font-size: 18px;
+		}
+
+		#ImageContainer {
+			width: 310px; height: 210px;
+		}
+
+		#SecondVideoFullContainer {
+			margin-top: 18px;
+		}
+
+		#SecondVideoContainer {
+			width: 560px; height: 320px;
+		}
+
+		#LinksTittleContainer {
+			font-size: 20px;
+		}
+
+		#AllLinksContainer {
+			font-size: 16px;
+		}
+
+		#AllLinksContainer1 {
+			margin-right: 40px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 900px*/
+	@media only screen and (max-width: 900px) {
+		#ImageContainer {
+			width: 290px; height: 190px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 800px*/
+	@media only screen and (max-width: 800px) {
+
+		.NoButtons {
+			font-size: 18px;
+		}
+
+		#TitleContainer {
+			font-size: 40px;
+		}
+
+		#ImageContainer {
+			width: 270px; height: 170px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 380px*/
+	@media only screen and (max-width: 700px) {
+
+		#MainImage {
+			height: 600px;
+			top: 78px;
+		}
+
+		#TitleContainer {
+			margin: 190px 0 0 0;
+		}
+
+		#ContentOfPageContainer {
+			margin-top: 660px;
+		}
+
+		.TitleContainer {
+			font-size: 22px;
+		}
+
+		#GiannisFirstInfoTextContainer {
+			font-size: 17px;
+		}
+
+		#FirstVideoButton {
+			font-size: 18px;
+		}
+
+		#InsideFAContainer:hover ~ #ImageContainer {
+			opacity: 0.4;
+		}
+
+		#ImageContainer {
+			width: 220px; height: 120px;
+			top: 0;
+			left: 50%;
+			opacity: 0.4;
+			transform: translate(-50%, 0);
+		}
+
+		#SecondVideoButton {
+			font-size: 18px;
+		}
+
+		#LinksTittleContainer {
+			font-size: 18px;
+		}
+
+		#AllLinksContainer {
+			font-size: 14px;
+		}
+
+		#AllLinksContainer1 {
+			margin-right: 30px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 550px*/
+	@media only screen and (max-width: 550px) {
+		
+		#AnteMilwaukeImage {
+			width: 140px; height: 110px;
+			top: 5px;
+		}
+
+		.NoButtons {
+			font-size: 15px;
+		}
+		
+	}
+
+	/*SCREEN WIDTH UNDER 300px*/
+	@media only screen and (max-width: 300px) {
+		
+		
+	}
+/**/
+
+/*ANIMATIONS*/
+	@keyframes LeftInsideAnim {
+		0% {transform: translateX(-400px); font-weight: none;}
+		70% {transform: translateX(30px);}
+		100% {transform: translateX(0px); font-weight: bold;}
+	}
+
+	@keyframes UpInsideAnim {
+		0% {transform: translateY(-650px); font-weight: none;}
+		70% {transform: translateY(30px);}
+		100% {transform: translateY(0px); font-weight: bold;}
+	}
+
+	@keyframes RightInsideAnim {
+		0% {transform: translateX(650px); font-weight: none;}
+		70% {transform: translateX(-30px);}
+		100% {transform: translateX(0px); font-weight: bold;}
+	}
