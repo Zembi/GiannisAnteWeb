@@ -37,6 +37,8 @@
   
 	});
 
+	console.log($("#AboutGiannisButton"));
+
 	//CODE FOR ALL THE SCROLLS ON THE SITE
 	/*SCROLL OF ABOUT GIANNIS BUTTON*/
 	$("#AboutGiannisButton").click(function() {
