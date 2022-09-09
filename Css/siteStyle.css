@@ -8,6 +8,7 @@
 
 	body {
 		height: 100%;
+		min-width: 250px;
 		background: white;
 		margin: 0;
 		padding: 0;
@@ -34,7 +35,6 @@
 		z-index: 10;
 		width: 100%; height: 80px;
 		background: rgba(0, 0, 0, 0.9);
-		background: red;
 		border-bottom: 2px solid white;
 	}
 
@@ -49,9 +49,9 @@
 		/*Buttons Container*/
 	#ButtonsContainer {
 		position: absolute;
-		top: 50%; right: 10px;
 		height: 28px;
-		margin-top: -10px;
+		top: 50%; right: 10px;
+		transform: translateY(-50%);
 	}
 
 	.NoButtons {
@@ -77,6 +77,19 @@
 		color: rgb(77, 60, 6);
 		border-right: 2px solid transparent;
 		border-bottom: 2px solid rgb(9, 32, 2);
+	}
+
+	#ButtonToShowNoButtons {
+		display: none;
+		user-select: none;
+	}
+	
+	#HideBtnsCauseResizeImg {
+
+	}
+
+	#MenuShowVerticallyContainer {
+		display: none;
 	}
 	
 	/*Under Menu Elements*/
@@ -304,12 +317,18 @@
 	#FreaksAccomplishmentsTextContainer {
 		position: relative;
 		display: inline-block;
+		background: transparent;
 		color: black;
 		font-family: Flamenco;
 		font-size: 20px;
 		left: 10%;
 		margin-top: 10px;
 		transform: translateX(0%);
+	}
+
+	#UnorderListOfAchievements {
+		position: relative;
+		display: inline-block;
 	}
 
 	#InsideFAContainer:hover ~ #ImageContainer {
@@ -397,6 +416,7 @@
 		display: block;
 		width: 100%;
 		background: black;
+		border-top: 2px solid white;
 		margin-top: 70px;
 		padding: 10px 0 5px 0;
 	}
@@ -567,6 +587,7 @@
 
 		.NoButtons {
 			font-size: 18px;
+			margin-right: 12px;
 		}
 
 		#TitleContainer {
@@ -610,6 +631,11 @@
 			opacity: 0.4;
 		}
 
+		#FreaksAccomplishmentsTextContainer {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
 		#ImageContainer {
 			width: 220px; height: 120px;
 			top: 0;
@@ -635,6 +661,62 @@
 		}
 	}
 
+	/*SCREEN WIDTH UNDER 640px*/
+	@media only screen and (max-width: 640px) {	
+		
+		#TitleContainer {
+			font-size: 30px;
+		}
+
+		#DownPartWithInfoAboutGiannis {
+			padding: 40px 0 20px 0;
+		}
+
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 300px;
+			margin-top: 35px;
+		}
+
+		#FirstVideoFullWrapContainer {
+			width: 100%; height: 100%;
+			transform: translate(-50%, 0);
+		}
+
+		#FirstVideoButton {
+			display: none;
+		}
+
+		#FirstVideoContainer {
+			width: 100%; height: 100%;
+			border-radius: 0;
+		}
+
+		#DownPartWithFreaksAchiev {
+			padding: 40px 0 20px 0;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 300px;
+			margin-top: 35px;
+		}
+
+		#SecondVideoFullWrapContainer {
+			width: 100%; height: 100%;
+			transform: translate(-50%, 0);
+		}
+
+		#SecondVideoButton {
+			display: none;
+		}
+
+		#SecondVideoContainer {
+			width: 100%; height: 100%;
+			border-radius: 0;
+		}
+	}
+
 	/*SCREEN WIDTH UNDER 550px*/
 	@media only screen and (max-width: 550px) {
 		
@@ -645,14 +727,174 @@
 
 		.NoButtons {
 			font-size: 15px;
+			margin-right: 10px;
+		}
+
+		.TitleContainer {
+			font-size: 18px;
+		}
+
+		#GiannisFirstInfoTextContainer {
+			font-size: 15px;
 		}
 		
+		#FreaksAccomplishmentsTextContainer {
+			font-size: 15px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 640px*/
+	@media only screen and (max-width: 530px) {
+		
+		#MainImage {
+			height: 450px;
+			top: 78px;
+		}
+
+		#TitleContainer {
+			margin: 120px 0 0 0;
+		}
+
+		#ContentOfPageContainer {
+			margin-top: 500px;
+		}
+
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 250px;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 250px;
+		}
+
+		#LinksTittleContainer {
+			font-size: 16px;
+		}
+
+		#AllLinksContainer {
+			font-size: 12px;
+		}
+
+		#AllLinksContainer1 {
+			margin-right: 20px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 640px*/
+	@media only screen and (max-width: 450px) {
+
+		#ButtonsContainer {
+			right: 20px;
+		}
+
+		.NoButtons {
+			display: none;
+			user-select: none;
+		}
+
+		#ButtonToShowNoButtons {
+			position: relative;
+			display: block;
+			background: transparent;
+			top: 50%;
+			border: 1px solid green;
+			border-radius: 2px;
+			padding: 2px;
+			user-select: auto;
+			transform: translateY(-50%);
+		}
+		
+		#HideBtnsCauseResizeImg {
+			width: 35px; height: 40px;
+			content: url('../SitePics/OtherAssets/Menu2.png');
+		}
+
+		#ButtonToShowNoButtons:hover #HideBtnsCauseResizeImg {
+			content: url('../SitePics/OtherAssets/Menu3.png');
+		}
+
+		#ButtonToShowNoButtons:focus #HideBtnsCauseResizeImg {
+			content: url('../SitePics/OtherAssets/Menu3.png');
+		}
+
+		#ButtonToShowNoButtons:active #HideBtnsCauseResizeImg {
+			content: url('../SitePics/OtherAssets/Menu1.png');
+		}
+
+		#MenuShowVerticallyContainer {
+			position: absolute;
+			display: none;
+			width: 30px; height: 100px;
+			background: red;
+		}
+		
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 220px;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 220px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 370px*/
+	@media only screen and (max-width: 370px) {
+		
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 190px;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 190px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 330px*/
+	@media only screen and (max-width: 330px) {
+		
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 170px;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 170px;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 300px*/
 	@media only screen and (max-width: 300px) {
 		
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 150px;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 150px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 270px*/
+	@media only screen and (max-width: 270px) {
 		
+		#FirstVideoFullContainer {
+			position: relative;
+			width: 100%; height: 130px;
+		}
+
+		#SecondVideoFullContainer {
+			position: relative;
+			width: 100%; height: 150px;
+		}
 	}
 /**/
 
