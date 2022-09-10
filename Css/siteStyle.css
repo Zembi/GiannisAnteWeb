@@ -16,6 +16,7 @@
 
 	#BodyContainer {
 		width: 100%;
+		min-width: 250px;
 		background: black;
 	}
 
@@ -49,15 +50,21 @@
 		/*Buttons Container*/
 	#ButtonsContainer {
 		position: absolute;
-		height: 28px;
+		display: block;
+		background: transparent;
 		top: 50%; right: 10px;
 		transform: translateY(-50%);
 	}
 
+	#ButtonsWrapContainer {
+		position: relative;
+		display: block;
+		background: transparent;
+	}
+
 	.NoButtons {
 		position: relative;
-		display: table;
-		float: left;
+		display: inline-block;
 		color: white;
 		background: transparent;
 		cursor: pointer;
@@ -80,8 +87,10 @@
 	}
 
 	#ButtonToShowNoButtons {
+		position: absolute;
 		display: none;
 		user-select: none;
+		right: 20px;
 	}
 	
 	#HideBtnsCauseResizeImg {
@@ -638,9 +647,9 @@
 
 		#ImageContainer {
 			width: 220px; height: 120px;
-			top: 0;
+			top: 5px;
 			left: 50%;
-			opacity: 0.4;
+			opacity: 0;
 			transform: translate(-50%, 0);
 		}
 
@@ -666,6 +675,10 @@
 		
 		#TitleContainer {
 			font-size: 30px;
+		}
+
+		#NumberTextContainer {
+			top: -10px;
 		}
 
 		#DownPartWithInfoAboutGiannis {
@@ -718,11 +731,15 @@
 	}
 
 	/*SCREEN WIDTH UNDER 550px*/
-	@media only screen and (max-width: 550px) {
+	@media only screen and (max-width: 570px) {
 		
 		#AnteMilwaukeImage {
-			width: 140px; height: 110px;
+			width: 160px; height: 130px;
 			top: 5px;
+		}
+
+		#ButtonsContainer {
+			margin-top: 4px;
 		}
 
 		.NoButtons {
@@ -782,45 +799,84 @@
 		}
 	}
 
-	/*SCREEN WIDTH UNDER 640px*/
-	@media only screen and (max-width: 450px) {
+	/*SCREEN WIDTH UNDER 500px*/
+	@media only screen and (max-width: 500px) {
 
+		#AnteMilwaukeImage {
+			width: 140px; height: 110px;
+			top: 5px;
+		}
+		
 		#ButtonsContainer {
-			right: 20px;
+			display: none;
+			top: 80%;
+			bottom: 0px;
+			right: 0px;
+			z-index: 1;
+			transform: translateY(0);
+		}
+
+		#ButtonsWrapContainer {
+			position: relative;
+			display: block;
+			background: rgba(0, 0, 0, 0.9);
+			border-radius: 4px 0 0 4px;
+			border: 1px solid white; border-right: none;
+			padding: 0 15px 0 15px;
 		}
 
 		.NoButtons {
-			display: none;
-			user-select: none;
+			position: relative;
+			display: block;
+			background: rgb(255, 255, 255, 0.1);
+			font-size: 15px;
+			left: 50%;
+			border: 2px solid transparent;
+			border-radius: 4px;
+			margin: 18px 0 18px 0;
+			transform: translateX(-50%);
 		}
 
 		#ButtonToShowNoButtons {
-			position: relative;
 			display: block;
 			background: transparent;
 			top: 50%;
-			border: 1px solid green;
+			border: 1px solid rgb(64, 105, 90);
 			border-radius: 2px;
 			padding: 2px;
+			cursor: pointer;
 			user-select: auto;
+			z-index: 2;
 			transform: translateY(-50%);
+		}
+
+		#ButtonToShowNoButtons:hover {			
+			border: 1px solid white;
+		}
+
+		#ButtonToShowNoButtons:focus {
+			border: 1px solid white;
+		}
+
+		#ButtonToShowNoButtons:active {
+			border: 1px solid black;
 		}
 		
 		#HideBtnsCauseResizeImg {
 			width: 35px; height: 40px;
-			content: url('../SitePics/OtherAssets/Menu2.png');
+			content: url('../SitePics/OtherAssets/menu2.png');
 		}
 
 		#ButtonToShowNoButtons:hover #HideBtnsCauseResizeImg {
-			content: url('../SitePics/OtherAssets/Menu3.png');
+			content: url('../SitePics/OtherAssets/menu3.png');
 		}
 
 		#ButtonToShowNoButtons:focus #HideBtnsCauseResizeImg {
-			content: url('../SitePics/OtherAssets/Menu3.png');
+			content: url('../SitePics/OtherAssets/menu3.png');
 		}
 
 		#ButtonToShowNoButtons:active #HideBtnsCauseResizeImg {
-			content: url('../SitePics/OtherAssets/Menu1.png');
+			content: url('../SitePics/OtherAssets/menu1.png');
 		}
 
 		#MenuShowVerticallyContainer {
@@ -829,21 +885,60 @@
 			width: 30px; height: 100px;
 			background: red;
 		}
-		
+	}
+
+	/*SCREEN WIDTH UNDER 640px*/
+	@media only screen and (max-width: 450px) {
+
+		.NoButtons {
+			font-size: 14px;
+			margin: 13px 0 13px 0;
+		}
+
+		#ButtonsWrapContainer {
+			padding: 0 10px 0 10px;
+		}
+
 		#FirstVideoFullContainer {
 			position: relative;
 			width: 100%; height: 220px;
 		}
 
+		#ImageContainer {
+			width: 200px; height: 100px;
+		}
+
 		#SecondVideoFullContainer {
 			position: relative;
 			width: 100%; height: 220px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 410px*/
+	@media only screen and (max-width: 410px) {
+		
+		#TitleContainer {
+			font-size: 25px;
+			margin: 100px 0 0 0;
+		}
+
+		#NumberTextContainer {
+			top: -6px;
 		}
 	}
 
 	/*SCREEN WIDTH UNDER 370px*/
 	@media only screen and (max-width: 370px) {
 		
+		.NoButtons {
+			font-size: 12px;
+			margin: 10px 0 10px 0;
+		}
+
+		#ButtonsWrapContainer {
+			padding: 0 8px 0 8px;
+		}
+
 		#FirstVideoFullContainer {
 			position: relative;
 			width: 100%; height: 190px;
@@ -855,8 +950,38 @@
 		}
 	}
 
+	/*SCREEN WIDTH UNDER 350px*/
+	@media only screen and (max-width: 350px) {
+		
+		#TitleContainer {
+			font-size: 20px;
+			margin: 60px 0 0 0;
+		}
+
+		#NumberTextContainer {
+			top: -5px;
+			margin: 0 20px 0 20px;
+		}
+
+		#MainImage {
+			height: 350px;
+			top: 78px;
+		}
+		
+		#ContentOfPageContainer {
+			margin-top: 400px;
+		}
+	}
+
 	/*SCREEN WIDTH UNDER 330px*/
 	@media only screen and (max-width: 330px) {
+		
+		#AnteMilwaukeImage {
+			width: 130px; height: 100px;
+			top: 10px;
+			left: -10px;
+			margin-top: 0;
+		}
 		
 		#FirstVideoFullContainer {
 			position: relative;
@@ -880,6 +1005,20 @@
 		#SecondVideoFullContainer {
 			position: relative;
 			width: 100%; height: 150px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 280px*/
+	@media only screen and (max-width: 280px) {
+		
+		#TitleContainer {
+			font-size: 16px;
+			margin: 50px 0 0 0;
+		}
+
+		#NumberTextContainer {
+			top: -4px;
+			margin: 0 15px 0 15px;
 		}
 	}
 

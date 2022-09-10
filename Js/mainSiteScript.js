@@ -6,15 +6,74 @@
 		// Check if the element is outside the viewport
 		// Then invert the returned value because you want to know the opposite
 		return !(bb.top > innerHeight || bb.bottom < 0);
-
 	}
 
-	var btnToShowNoBtns = document.getElementById("ButtonToShowNoButtons");
-	btnToShowNoBtns.name = "0";
-	
-	btnToShowNoBtns.onclick = function() {
-		MenuButtonEvent(this);
-	};
+	//MENU BUTTON ACTIONS
+	InitializeMenuButton();
+
+	function InitializeMenuButton() {
+		var btn = document.getElementById("ButtonToShowNoButtons");
+		btn.value = "0";
+
+		if(document.body.offsetWidth > 500) {
+			btn.name = "-";
+		}
+		else {
+			btn.name = "closed";
+		}
+
+		btn.onmousedown = function(e) {
+			e.stopImmediatePropagation();
+			MenuButtonEvent(this);
+			e.preventDefault();
+		};
+	}
+
+	document.body.onresize = function() {
+		MenuButtonCheckResize();
+	}
+
+	function MenuButtonEvent(btn) {
+		var buttonsC = document.getElementById("ButtonsContainer");
+		var btn = document.getElementById("ButtonToShowNoButtons");
+		
+		btn = ActionsForMenuButton(btn, buttonsC);
+	}
+
+	function MenuButtonCheckResize() {
+		var buttonsC = document.getElementById("ButtonsContainer");
+		var btn = document.getElementById("ButtonToShowNoButtons");
+
+		if(document.body.offsetWidth > 500) {
+			buttonsC.style.display = "block";
+			btn.name = "closed";
+			btn.value = "0";
+		}
+		else {
+			if(btn.name == "closed") {
+				buttonsC.style.display = "none";
+			}
+			else if(btn.name == "opened") {
+				buttonsC.style.display = "block";
+			}
+		}
+	}
+
+	function ActionsForMenuButton(btn, buttonsC) {
+		if(btn.value == "0") {
+			btn.value = "1";
+			buttonsC.style.display = "block";
+			btn.name = "opened";
+		}
+		else {
+			btn.value = "0";
+			buttonsC.style.display = "none";
+			btn.name = "closed";
+		}
+
+		return btn;
+	}
+
 
 	var downPartAGC = document.getElementById('DownPartWithInfoAboutGiannis');
 	var downPartFAC = document.getElementById('DownPartWithFreaksAchiev');
@@ -66,138 +125,92 @@
 	var iframe2 = document.getElementById("Iframe2");
 	var player2 = new Vimeo.Player(iframe2);
 	var counter2 = 0;
+	var vPlayers = [player1, player2];
 
 	//FIRST PART OF CONTENT
 	video1Btn.tabIndex = "-1";
 	iframe1.tabIndex = "-1";
 
-	video1Btn.onclick = function() {
-		if(counter1 % 2 == 0) {
-			var move1Px = "-" + video1C.offsetHeight - (-8);
-			video1FullWrapC.style.transform = "translate(-50%, " + move1Px + "px)";
-
-			video1Btn.style.top = "1px";
-
-			document.body.onresize = function() {
-				var move1Px = "-" + video1C.offsetHeight - (-8);
-
-				if(document.body.offsetWidth <= 640) {
-					move1Px = 0;
-				}
-
-				video1FullWrapC.style.transform = "translate(-50%, " + move1Px + "px)";
-			}
-
-			video1Btn.onmouseover = function(){
-				this.style.background = "rgb(15, 23, 12)";
-				this.style.transform = "translate(-50%, 0)";
-			};
-
-			video1Btn.onmouseout = function(){
-				this.style.background = "rgb(9, 32, 2)";
-				this.style.transform = "translate(-50%, 0)";
-			};
-
-			player2.pause();
-			counter1 = 1;
-		}
-		else {
-			video1Btn.style.top = "0";
-
-			document.body.onresize = function() {
-				var move1Px = 0;
-				video1FullWrapC.style.transform = "translate(-50%, " + move1Px + "px)";
-			}
-
-			video1FullWrapC.style.transform = "translate(-50%, 0)";
-
-			video1Btn.onmouseover = function(){
-				this.style.background = "rgb(15, 23, 12)";
-				this.style.transform = "translate(-50%, -5px)";
-			};
-
-			video1Btn.onmouseout = function(){
-				this.style.background = "rgb(9, 32, 2)";
-				this.style.transform = "translate(-50%, 0)";
-			};
-
-			player1.pause();
-			counter1 = 0;
-		}
-
-		this.style.transform = "translate(-50%, 0)";
+	video1Btn.onmousedown = function(e) {
+		e.stopImmediatePropagation();
+		counter1 = NewTab("1", video1FullWrapC, video1C, video1Btn, player1, vPlayers, counter1);
+		e.preventDefault();
 	}
 
 	//SECOND PART OF CONTENT
 	video2Btn.tabIndex = "-1";
 	iframe2.tabIndex = "-1";
 
-	video2Btn.onclick = function() {
-		if(counter2 % 2 == 0) {
-			var move2Px = "-" + video2C.offsetHeight - (-8);
-			video2FullWrapC.style.transform = "translate(-50%, " + move2Px + "px)";
-
-			video2Btn.style.top = "1px";
-
-			document.body.onresize = function() {
-				var move2Px = "-" + video2C.offsetHeight - (-8);
-
-				if(document.body.offsetWidth <= 640) {
-					move2Px = 0;
-				}
-
-				video2FullWrapC.style.transform = "translate(-50%, " + move2Px + "px)";
-			}
-
-			video2Btn.onmouseover = function(){
-				this.style.background = "rgb(15, 23, 12)";
-				this.style.transform = "translate(-50%, 0)";
-			};
-
-			video2Btn.onmouseout = function(){
-				this.style.background = "rgb(9, 32, 2)";
-				this.style.transform = "translate(-50%, 0)";
-			};
-
-			player1.pause()
-			counter2 = 1;
-		}
-		else {
-			video2Btn.style.top = "0";
-
-			document.body.onresize = function() {
-				var move2Px = 0;
-				video2FullWrapC.style.transform = "translate(-50%, " + move2Px + "px)";
-			}
-
-			video2FullWrapC.style.transform = "translate(-50%, 0)";
-
-			video2Btn.onmouseover = function(){
-				this.style.background = "rgb(15, 23, 12)";
-				this.style.transform = "translate(-50%, -5px)";
-			};
-			video2Btn.onmouseout = function(){
-				this.style.background = "rgb(9, 32, 2)";
-				this.style.transform = "translate(-50%, 0)";
-			};
-
-			player2.pause();
-			counter2 = 0;
-		}
-		this.style.transform = "translate(-50%, 0)";
+	video2Btn.onmousedown = function(e) {
+		e.stopImmediatePropagation();
+		counter2 = NewTab("2", video2FullWrapC, video2C, video2Btn, player2, vPlayers, counter2);
+		e.preventDefault();
 	}
 
-	function MenuButtonEvent(btn) {
-		var menuShowVerticallyC = document.getElementById("MenuShowVerticallyContainer");
+	function NewTab(tabId, videoFullWrapC, videoC, videoBtn, player, vAllPlayers, counter) {
+		if(counter % 2 == 0) {
+			var movePx = "-" + videoC.offsetHeight - (-8);
+			videoFullWrapC.style.transform = "translate(-50%, " + movePx + "px)";
 
-		if(btn.name == "0") {
-			menuShowVerticallyC.style.display = "block";
-			btn.name = "1";
+			videoBtn.style.top = "1px";
+
+			document.body.onresize = function() {
+				MenuButtonCheckResize();
+				var movePx = "-" + videoC.offsetHeight - (-8);
+
+				if(document.body.offsetWidth <= 640) {
+					movePx = 0;
+				}
+
+				videoFullWrapC.style.transform = "translate(-50%, " + movePx + "px)";
+			}
+
+			videoBtn.onmouseover = function(){
+				videoBtn.style.background = "rgb(15, 23, 12)";
+				videoBtn.style.transform = "translate(-50%, 0)";
+			};
+
+			videoBtn.onmouseout = function(){
+				videoBtn.style.background = "rgb(9, 32, 2)";
+				videoBtn.style.transform = "translate(-50%, 0)";
+			};
+
+			vAllPlayers.forEach(item => {
+				if(item != player) {
+					item.pause();
+				}
+			});
+
+			counter = 1;
 		}
 		else {
-			menuShowVerticallyC.style.display = "none";
-			btn.name = "0";
+			videoBtn.style.top = "0";
+
+			document.body.onresize = function() {
+				MenuButtonCheckResize();
+				var movePx = 0;
+				videoFullWrapC.style.transform = "translate(-50%, " + movePx + "px)";
+			}
+
+			videoFullWrapC.style.transform = "translate(-50%, 0)";
+
+			videoBtn.onmouseover = function(){
+				videoBtn.style.background = "rgb(15, 23, 12)";
+				videoBtn.style.transform = "translate(-50%, -5px)";
+			};
+
+			videoBtn.onmouseout = function(){
+				videoBtn.style.background = "rgb(9, 32, 2)";
+				videoBtn.style.transform = "translate(-50%, 0)";
+			};
+
+			player.pause();
+			counter = 0;
 		}
+
+		videoBtn.style.transform = "translate(-50%, 0)";
+
+		return counter;
 	}
 
 	//FORCE PAGE TO SCROLL UP WHEN REFRESH
