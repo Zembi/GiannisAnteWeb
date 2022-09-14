@@ -234,10 +234,10 @@
 	FooterInfoActions();
 
 	//FORCE PAGE TO SCROLL UP WHEN REFRESH
-	/*if (history.scrollRestoration) {
+	if (history.scrollRestoration) {
 		history.scrollRestoration = 'manual';
 	} else {
 		window.onbeforeunload = function () {
 			window.scrollTo(0, 0);
 		}
-	}*/
+	}
