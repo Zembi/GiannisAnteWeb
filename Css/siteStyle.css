@@ -14,6 +14,15 @@
 		padding: 0;
 	}
 
+	a {
+		text-decoration: none;
+		color: rgb(27, 37, 2);
+	}
+
+	a:hover {
+		color: rgb(55, 45, 7);
+	}
+
 	#BodyContainer {
 		width: 100%;
 		min-width: 250px;
@@ -29,7 +38,7 @@
 		content: url('../SitePics/Giannis/Giannis1.jpg');
 	}
 	
-	/*Menu Elements*/
+	/*MENU ELEMENTS*/
 	#HeaderContainer {
 		position: sticky;
 		top: 0;
@@ -47,7 +56,7 @@
 		margin-top: -10px;
 	}
 	
-		/*Buttons Container*/
+		/*BUTTONS CONTAINER*/
 	#ButtonsContainer {
 		position: absolute;
 		display: block;
@@ -101,7 +110,7 @@
 		display: none;
 	}
 	
-	/*Under Menu Elements*/
+	/*UNDER MENU ELEMENTS*/
 	#MainPartContainer {
 		position: relative;
 		width: 100%;
@@ -422,55 +431,131 @@
 	/*FOOTER STYLE*/
 	#FooterContainer {
 		position: relative;
-		display: block;
+		display: inline-block;
 		width: 100%;
-		background: black;
+		background: rgb(94, 97, 94);
 		border-top: 2px solid white;
 		margin-top: 70px;
 		padding: 10px 0 5px 0;
 	}
 
-	#LinksTittleContainer {
-		position: relative;
-		display: table;
-		color: white;
-		font-size: 24px;
-		border: 2px solid white; border-left: none; border-right: none;
-		margin: auto;
+		#LinksTittleContainer {
+			position: relative;
+			display: table;
+			color: white;
+			font-size: 24px;
+			border: 2px solid white; border-left: none; border-right: none;
+			margin: auto;
+		}
+
+		#AllLinksContainerC {
+			position: relative;
+			display: block;
+			width: 100%;
+			background: transparent;
+		}
+
+		#AllLinksContainer {
+			position: relative;
+			display: inline-block;
+			background: transparent;
+			left: 50%;
+			font-size: 18px;
+			transform: translateX(-50%);
+		}
+
+		#AllLinksContainer li {
+			border-bottom: 1px solid black;
+		}
+
+			#AllLinksContainer1 {
+				position: relative;
+				display: inline-block;
+				float: left;
+				background: transparent;
+				color: rgb(9, 32, 2);
+				top: 0;
+				margin-right: 60px;
+			}
+
+			#AllLinksContainer2 {
+				position: relative;
+				display: inline-block;
+				float: left;
+				background: transparent;
+				color: rgb(9, 32, 2);
+			}
+
+	#AboutMeAllWrapContainer {
+		position: absolute;
+		display: inline-block;
+		background: transparent;
+		top: 50%;
+		left: 85%;
+		border-bottom: 2px solid black;
+		padding: 0 2px 0 0;
+		transform: translate(-50%, -50%);
 	}
 
-	#AllLinksContainer {
+		#AboutMeAllBtnsWrapContainer {
+			position: relative;
+			background: transparent;
+		}
+
+			.AboutMeInfoContainer {
+				position: relative;
+				display: inline-block;
+				background: transparent;
+				margin: 0 10px 0 10px;
+			}
+
+				.AboutMeInfoButton {
+					width: 30px; height: 30px;
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					margin: 0;
+					padding: 0;
+				}
+
+					#GitHubImage {
+						width: 100%; height: 100%;
+						content: url(../SitePics/OtherAssets/gitHub2.png);
+					}
+
+					#GitHubButton:hover #GitHubImage {
+						content: url(../SitePics/OtherAssets/gitHub3.png);
+					}
+
+					#LinkedInImage {
+						width: 100%; height: 100%;
+						content: url(../SitePics/OtherAssets/linkedIn2.png);
+					}
+
+					#LinkedInButton:hover #LinkedInImage {
+						content: url(../SitePics/OtherAssets/linkedIn3.png);
+					}
+
+	#FooterCopyrightAllWrapContainer {
 		position: relative;
 		display: inline-block;
 		background: transparent;
+		font-size: 14px;
 		left: 50%;
-		font-size: 18px;
+		margin-top: 5px;
 		transform: translateX(-50%);
 	}
 
-	#AllLinksContainer1 {
-		position: relative;
-		display: inline-block;
-		background: transparent;
-		color: rgb(9, 32, 2);
-		margin-top: 10px; margin-right: 60px;
-	}
+		#FooterCopyrightContainer {
+			position: relative;
+			display: inline-block;
+			background: transparent;
+			color: white;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 
-	#AllLinksContainer2 {
-		position: relative;
-		display: inline-block;
-		background: transparent;
-		color: rgb(9, 32, 2);
-	}
 
-	a {
-		text-decoration: none;
-		color: rgb(27, 37, 2);
-	}
-
-	a:hover {
-		color: rgb(55, 45, 7);
-	}
 
 	/*SCREEN WIDTH UNDER 1700px*/
 	@media only screen and (max-width: 1700px) {
@@ -582,6 +667,18 @@
 		#AllLinksContainer1 {
 			margin-right: 40px;
 		}
+
+		.AboutMeInfoContainer {
+			margin: 0 8px 0 8px;
+		}
+
+		.AboutMeInfoButton {
+			width: 25px; height: 25px;
+		}
+
+		#FooterCopyrightAllWrapContainer {
+			font-size: 12px;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 900px*/
@@ -668,6 +765,18 @@
 		#AllLinksContainer1 {
 			margin-right: 30px;
 		}
+
+		.AboutMeInfoContainer {
+			margin: 0 6px 0 6px;
+		}
+
+		.AboutMeInfoButton {
+			width: 23px; height: 23px;
+		}
+
+		#FooterCopyrightAllWrapContainer {
+			font-size: 10px;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 640px*/
@@ -727,6 +836,34 @@
 		#SecondVideoContainer {
 			width: 100%; height: 100%;
 			border-radius: 0;
+		}
+
+		#AboutMeAllWrapContainer {
+			position: relative;
+			display: block;
+			float: none;
+			width: 100%;
+			left: 0;
+			right: 0;
+			border: none;
+			margin: -10px 0 0px 0;
+			padding: 0;
+			transform: translateX(0);
+		}
+
+		#AboutMeAllBtnsWrapContainer {
+			position: relative;
+			display: inline-block;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.AboutMeInfoContainer {
+			margin: 0 5px 0 5px;
+		}
+
+		.AboutMeInfoButton {
+			width: 20px; height: 20px;
 		}
 	}
 
@@ -796,6 +933,18 @@
 
 		#AllLinksContainer1 {
 			margin-right: 20px;
+		}
+
+		.AboutMeInfoContainer {
+			margin: 0 3px 0 3px;
+		}
+
+		.AboutMeInfoButton {
+			width: 17px; height: 17px;
+		}
+
+		#FooterCopyrightAllWrapContainer {
+			font-size: 9px;
 		}
 	}
 

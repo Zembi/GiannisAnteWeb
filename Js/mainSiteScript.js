@@ -213,6 +213,26 @@
 		return counter;
 	}
 
+	//FOOTER BUTTONS FOR INFO ABOUT GIT AND LINKEDIN
+	function FooterInfoActions() {
+		var gitHubBtn = document.getElementById("GitHubButton");
+		var linkedInBtn = document.getElementById("LinkedInButton");
+
+		gitHubBtn.onmousedown = function(e) {
+			e.stopImmediatePropagation();
+			window.open().location.href = "https://github.com/Zembi";
+			e.preventDefault();
+		}
+
+		linkedInBtn.onmousedown = function(e) {
+			e.stopImmediatePropagation();
+			window.open().location.href = "https://gr.linkedin.com/in/vasileios-filippos-zembilas-a08908189?trk=public_profile_browsemap";
+			e.preventDefault();
+		}
+	}
+
+	FooterInfoActions();
+
 	//FORCE PAGE TO SCROLL UP WHEN REFRESH
 	/*if (history.scrollRestoration) {
 		history.scrollRestoration = 'manual';
