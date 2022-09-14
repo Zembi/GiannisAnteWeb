@@ -1,3 +1,9 @@
+	/*FONT-FAMILIES USED*/
+	@import url('https://fonts.googleapis.com/css?family=Flamenco');
+	
+	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
 	* {
   		box-sizing: border-box;
 	}
@@ -21,6 +27,22 @@
 
 	a:hover {
 		color: rgb(55, 45, 7);
+	}
+
+	#PreloadImgsContainer {
+		width: 0px;
+		height: 0px;
+		display: inline;
+		background-image: url('../SitePics/Giannis/Giannis1.jpg');
+		background-image: url('../SitePics/Giannis/Giannis5.png');
+		background-image: url('../SitePics/Giannis/Giannis4.jpg');
+		background-image: url('../SitePics/OtherAssets/gitHub2.png');
+		background-image: url('../SitePics/OtherAssets/gitHub3.png');
+		background-image: url('../SitePics/OtherAssets/linkedIn2.png');
+		background-image: url('../SitePics/OtherAssets/linkedIn3.png');
+		background-image: url('../SitePics/OtherAssets/menu1.png');
+		background-image: url('../SitePics/OtherAssets/menu2.png');
+		background-image: url('../SitePics/OtherAssets/menu3.png');
 	}
 
 	#BodyContainer {
