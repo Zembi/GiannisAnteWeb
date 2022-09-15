@@ -226,7 +226,7 @@
 
 		linkedInBtn.onmousedown = function(e) {
 			e.stopImmediatePropagation();
-			window.open().location.href = "https://gr.linkedin.com/in/vasileios-filippos-zembilas-a08908189?trk=public_profile_browsemap";
+			window.open().location.href = "https://www.linkedin.com/in/vasileios-filippos-zembilas-a08908189";
 			e.preventDefault();
 		}
 	}
